@@ -70,7 +70,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (!isFull() && !activePlayer) {
             boolean esito = false;
             int n = 0;
-            if (!attacco()) {
+            if(r.nextInt(4)!=3&&buttons[4].getText().equals("")){
+                    buttons[4].setText("O");
+                    buttons[4].setTextColor(Color.parseColor("#FFFFC107"));
+                    activePlayer = true;
+
+            }
+           else if (!attacco()) {
                 if (!difesa()) {
                     while (!esito) {
                         n = r.nextInt(9);
