@@ -71,12 +71,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             boolean esito = false;
             int n = 0;
             if(r.nextInt(4)!=3&&buttons[4].getText().equals("")){
-                    buttons[4].setText("O");
-                    buttons[4].setTextColor(Color.parseColor("#FFFFC107"));
-                    activePlayer = true;
+                buttons[4].setText("O");
+                buttons[4].setTextColor(Color.parseColor("#FFFFC107"));
+                activePlayer = true;
 
             }
-           else if (!attacco()) {
+            else if (!attacco()) {
                 if (!difesa()) {
                     while (!esito) {
                         n = r.nextInt(9);
@@ -96,10 +96,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(     (buttons[0].getText().equals("X")&&buttons[1].getText().equals("X")&&buttons[2].getText().equals("")) ||
                 (buttons[0].getText().equals("X")&&buttons[1].getText().equals("")&&buttons[2].getText().equals("X"))||
                 (buttons[0].getText().equals("")&&buttons[1].getText().equals("X")&&buttons[2].getText().equals("X"))    ){
-                if(buttons[0].getText().equals("")){ buttons[0].setText("O");buttons[0].setTextColor(Color.parseColor("#FFFFC107"));activePlayer = true;}
-           else if(buttons[1].getText().equals("")) {buttons[1].setText("O");buttons[1].setTextColor(Color.parseColor("#FFFFC107"));activePlayer = true;}
-           else if(buttons[2].getText().equals("")) {buttons[2].setText("O");buttons[2].setTextColor(Color.parseColor("#FFFFC107"));activePlayer = true;}
-           return true;
+            if(buttons[0].getText().equals("")){ buttons[0].setText("O");buttons[0].setTextColor(Color.parseColor("#FFFFC107"));activePlayer = true;}
+            else if(buttons[1].getText().equals("")) {buttons[1].setText("O");buttons[1].setTextColor(Color.parseColor("#FFFFC107"));activePlayer = true;}
+            else if(buttons[2].getText().equals("")) {buttons[2].setText("O");buttons[2].setTextColor(Color.parseColor("#FFFFC107"));activePlayer = true;}
+            return true;
         }
         if(     (buttons[3].getText().equals("X")&&buttons[4].getText().equals("X")&&buttons[5].getText().equals("")) ||
                 (buttons[3].getText().equals("X")&&buttons[4].getText().equals("")&&buttons[5].getText().equals("X"))||
@@ -424,10 +424,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             cpu.setText(s);
             return true;
         }
-return false;
+        return false;
     }
 
-boolean isFull(){
+    boolean isFull(){
         boolean esito=true;
         for(int i=0;i<9;i++){
             if(buttons[i].getText().equals("")){
@@ -436,5 +436,5 @@ boolean isFull(){
         }
 
         return true;
-}
+    }
 }
